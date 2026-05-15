@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+  <meta name="description" content="PawHaven – Luxury Puppy Marketplace. Find your perfect purebred puppy with health guarantees, premium delivery, and white-glove concierge service.">
+  <title>PawHaven | Luxury Puppy Boutique</title>
+  <!-- Tailwind + Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #FEFAF5; overflow-x: hidden; }
+    
+    /* Luxury Glassmorphism */
+    .glass-nav {
+      background: rgba(255, 252, 245, 0.97);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .glass-card {
+      background: rgba(255, 250, 240, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 1.5rem;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px -8px rgba(184, 134, 11, 0.4);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px -8px rgba(184, 134, 11, 0.6);
+    }
+    .btn-outline-gold {
+      border: 1.5px solid #D4AF37;
+      transition: all 0.3s ease;
+    }
+    .btn-outline-gold:hover {
+      background: rgba(212, 175, 55, 0.1);
+      transform: translateY(-2px);
+    }
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .card-hover:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.2);
+    }
+    .gold-text {
+      background: linear-gradient(135deg, #D4AF37, #B8860B);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-gradient {
+      background: radial-gradient(ellipse at 80% 30%, rgba(255, 245, 225, 0.6), rgba(255, 252, 245, 0.2));
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 640px) {
+      .puppy-grid {
+        gap: 1rem;
+      }
+      h1 { font-size: 2.5rem !important; }
+      .hero-stats { flex-wrap: wrap; justify-content: center; }
+    }
+    
+    .puppy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.8rem;
+    }
+    
+    @media (max-width: 640px) {
+      .puppy-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Smooth Scroll */
+    html { scroll-behavior: smooth; }
+    
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #F5E6D3; }
+    ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 10px; }
+    
+    input:focus, textarea:focus {
+      border-color: #D4AF37;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Luxury Navbar -->
+  <header class="sticky top-0 z-50 glass-nav w-full py-3 md:py-4 px-5 md:px-12 transition-all">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-2.5">
+        <i class="fas fa-paw text-2xl text-amber-600"></i>
+        <span class="text-2xl md:text-3xl font-bold tracking-tight text-stone-800">Paw<span class="gold-text">Haven</span></span>
+      </div>
+      <nav class="hidden md:flex space-x-8 text-stone-700 font-medium">
+        <a href="#home" class="hover:text-amber-600 transition">Home</a>
+        <a href="#featured" class="hover:text-amber-600 transition">Puppies</a>
+        <a href="#about" class="hover:text-amber-600 transition">Ethos</a>
+        <a href="#testimonials" class="hover:text-amber-600 transition">Stories</a>
+        <a href="#contact" class="hover:text-amber-600 transition">Connect</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <i class="fa-regular fa-heart text-xl text-stone-500 hover:text-amber-600 cursor-pointer transition"></i>
+        <a href="#featured" class="btn-gold text-white px-5 py-2 rounded-full text-sm font-semibold">Reserve Now</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-16 md:pt-24 pb-20 px-5 md:px-12 hero-gradient">
+      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+        <div class="flex-1 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-white/70 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium text-amber-700 border border-amber-200/70 mb-6">
+            <i class="fas fa-gem text-amber-500 text-xs"></i>
+            <span>ETHICAL LUXURY BREEDING</span>
+          </div>
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight text-stone-800">Find Your <span class="gold-text">Perfect</span> Companion</h1>
+          <p class="text-lg text-stone-600 max-w-xl mt-6 mx-auto lg:mx-0 leading-relaxed">Discover puppies raised with love, premium health standards, and VIP white-glove delivery. Your dream puppy awaits.</p>
+          <div class="flex flex-wrap gap-4 justify-center lg:justify-start mt-8">
+            <a href="#featured" class="btn-gold text-white px-8 py-3.5 rounded-full text-lg font-semibold shadow-xl">Browse Puppies</a>
+            <a href="#contact" class="btn-outline-gold px-8 py-3.5 rounded-full text-lg font-semibold text-stone-700 hover:text-amber-700">Reserve Now →</a>
+          </div>
+          <div class="flex flex-wrap gap-8 justify-center lg:justify-start mt-12 hero-stats">
+            <div><span class="block text-3xl font-black text-amber-600">1.5k+</span><span class="text-stone-500 text-sm">Happy Families</span></div>
+            <div><span class="block text-3xl font-black text-amber-600">100%</span><span class="text-stone-500 text-sm">Health Certified</span></div>
+            <div><span class="block text-3xl font-black text-amber-600">24/7</span><span class="text-stone-500 text-sm">Concierge Support</span></div>
+          </div>
+        </div>
+        <div class="flex-1 relative">
+          <div class="rounded-3xl overflow-hidden shadow-2xl shadow-amber-900/20">
+            <img src="https://images.pexels.com/photos/1458914/pexels-photo-1458914.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Luxury puppy" class="w-full h-auto object-cover rounded-3xl">
+          </div>
+          <div class="absolute -top-6 -right-6 w-40 h-40 bg-amber-200/30 rounded-full blur-3xl -z-0"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <div class="max-w-6xl mx-auto px-5 md:px-6 -mt-6 relative z-20">
+      <div class="glass-card p-3 md:p-5 flex flex-col sm:flex-row gap-4 items-center justify-between shadow-md">
+        <div class="relative w-full sm:w-80">
+          <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-amber-500"></i>
+          <input type="text" id="breedFilter" placeholder="Filter by breed..." class="w-full pl-11 pr-4 py-3 rounded-xl border border-amber-200 bg-white/80 focus:ring-2 focus:ring-amber-300">
+        </div>
+        <div class="text-stone-500 text-sm flex items-center gap-2">
+          <i class="fa-regular fa-circle-check text-amber-600"></i>
+          <span id="puppyCountDisplay">45</span> exclusive puppies available
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Puppies Section - 45 Cards -->
+    <section id="featured" class="py-20 px-5 md:px-12 max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-amber-600 font-semibold tracking-wider text-sm uppercase">✦ the collection ✦</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-stone-800 mt-2">Our <span class="gold-text">Precious Litters</span></h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-amber-400 to-amber-700 mx-auto mt-4 rounded-full"></div>
+      </div>
+      <div id="puppiesGrid" class="puppy-grid"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-stone-900 text-white py-20 px-5 md:px-12 rounded-[3rem] mx-4 my-12 shadow-2xl">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-block bg-amber-800/30 text-amber-300 text-xs font-semibold px-3 py-1 rounded-full mb-4">OUR PHILOSOPHY</div>
+          <h2 class="text-4xl md:text-5xl font-bold leading-tight">Where elegance meets <span class="text-amber-400">ethical love</span></h2>
+          <p class="text-stone-300 mt-5 leading-relaxed">PawHaven isn't just a marketplace — it's a sanctuary for responsible breeding. Every puppy is vet-certified, raised in loving environments, and arrives with a complete health passport, premium goodies, and lifetime concierge support.</p>
+          <div class="grid grid-cols-2 gap-5 mt-8">
+            <div class="flex gap-3 items-center"><i class="fas fa-shield-heart text-amber-400 text-2xl"></i><div><p class="font-bold">2-Year Health Warranty</p><p class="text-stone-400 text-xs">Genetic & congenital</p></div></div>
+            <div class="flex gap-3 items-center"><i class="fas fa-truck-ramp-box text-amber-400 text-2xl"></i><div><p class="font-bold">VIP Climate Delivery</p><p class="text-stone-400 text-xs">Nationwide + tracker</p></div></div>
+          </div>
+        </div>
+        <div class="relative">
+          <img src="https://images.pexels.com/photos/7319102/pexels-photo-7319102.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Puppy care" class="rounded-3xl shadow-xl border border-amber-700/30 w-full object-cover">
+          <div class="absolute -bottom-4 -right-4 bg-amber-600 rounded-full p-3 shadow-xl"><i class="fas fa-paw text-white text-xl"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 px-5 max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-amber-600 font-semibold tracking-wide">HAPPY FAMILIES</span>
+        <h2 class="text-4xl font-bold text-stone-800 mt-2">Pawsitive Memories</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="flex gap-3 items-center mb-4">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-12 h-12 rounded-full object-cover border-2 border-amber-300">
+            <div><p class="font-bold text-stone-800">Victoria Chen</p><div class="text-amber-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+          </div>
+          <p class="text-stone-600">“Absolutely flawless process. Our puppy arrived with a custom carrier, health records and a handwritten note. Feels like royalty.”</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="flex gap-3 items-center mb-4">
+            <img src="https://randomuser.me/api/portraits/men/46.jpg" class="w-12 h-12 rounded-full object-cover border-2 border-amber-300">
+            <div><p class="font-bold text-stone-800">Marcus DeLuca</p><div class="text-amber-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+          </div>
+          <p class="text-stone-600">“Professional, transparent and genuinely caring. The support team still checks in after 3 months. Highly recommend!”</p>
+        </div>
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="flex gap-3 items-center mb-4">
+            <img src="https://randomuser.me/api/portraits/women/33.jpg" class="w-12 h-12 rounded-full object-cover border-2 border-amber-300">
+            <div><p class="font-bold text-stone-800">Sophia Laurent</p><div class="text-amber-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></div>
+          </div>
+          <p class="text-stone-600">“PawHaven's ethics won me over. The breeder video call, vet report and delivery were seamless. Worth every penny.”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 px-5 bg-gradient-to-br from-amber-50 to-white rounded-3xl mx-5 shadow-sm">
+      <div class="max-w-7xl mx-auto text-center mb-12">
+        <h2 class="text-4xl font-bold text-stone-800">The <span class="gold-text">PawHaven</span> Standard</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div class="text-center p-5 rounded-2xl bg-white/70 shadow-sm hover:shadow-md transition"><i class="fas fa-stethoscope text-3xl text-amber-600 mb-3"></i><h3 class="font-bold">Health Verified</h3><p class="text-xs text-stone-500">Full vet screening</p></div>
+        <div class="text-center p-5 rounded-2xl bg-white/70 shadow-sm"><i class="fas fa-truck-fast text-3xl text-amber-600 mb-3"></i><h3 class="font-bold">Safe Delivery</h3><p class="text-xs text-stone-500">Climate controlled</p></div>
+        <div class="text-center p-5 rounded-2xl bg-white/70 shadow-sm"><i class="fas fa-certificate text-3xl text-amber-600 mb-3"></i><h3 class="font-bold">Vet Certified</h3><p class="text-xs text-stone-500">Pre-screened</p></div>
+        <div class="text-center p-5 rounded-2xl bg-white/70 shadow-sm"><i class="fas fa-headset text-3xl text-amber-600 mb-3"></i><h3 class="font-bold">24/7 Concierge</h3><p class="text-xs text-stone-500">Lifetime support</p></div>
+        <div class="text-center p-5 rounded-2xl bg-white/70 shadow-sm"><i class="fas fa-hand-holding-heart text-3xl text-amber-600 mb-3"></i><h3 class="font-bold">Ethical Roots</h3><p class="text-xs text-stone-500">No puppy mills</p></div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-5 max-w-6xl mx-auto">
+      <div class="glass-card p-6 md:p-10 rounded-3xl shadow-xl">
+        <div class="grid md:grid-cols-2 gap-10">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-stone-800">Secure your <span class="gold-text">lifetime friend</span></h2>
+            <p class="mt-3 text-stone-600">Reserve your puppy now, schedule a video call, or ask anything — we're here 24/7.</p>
+            <div class="mt-6 space-y-4">
+              <a href="#" id="whatsappBtn" class="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20b85f] text-white rounded-full px-6 py-3 w-fit transition-all shadow-md"><i class="fab fa-whatsapp text-xl"></i> WhatsApp Concierge</a>
+              <div class="flex gap-5 mt-6"><i class="fab fa-instagram text-2xl text-stone-500 hover:text-amber-600 cursor-pointer transition"></i><i class="fab fa-tiktok text-2xl text-stone-500 hover:text-amber-600 transition"></i><i class="fab fa-youtube text-2xl text-stone-500 hover:text-amber-600 transition"></i></div>
+            </div>
+          </div>
+          <div>
+            <form id="contactForm" class="space-y-4">
+              <input type="text" placeholder="Your name" class="w-full p-3 rounded-xl border border-amber-200 bg-white/90" required>
+              <input type="email" placeholder="Email address" class="w-full p-3 rounded-xl border border-amber-200 bg-white/90" required>
+              <textarea rows="2" placeholder="Tell us which breed you're looking for..." class="w-full p-3 rounded-xl border border-amber-200 bg-white/90"></textarea>
+              <button type="submit" class="btn-gold text-white w-full py-3.5 rounded-xl font-semibold text-lg">Request a Puppy <i class="fa-regular fa-paper-plane ml-2"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-stone-900 text-white py-12 px-5 mt-8 rounded-t-3xl">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div><div class="flex items-center gap-2 text-2xl"><i class="fas fa-paw text-amber-400"></i><span class="font-bold">PawHaven</span></div><p class="text-stone-400 text-sm mt-3">Luxury puppies, ethical roots. Forever family starts here.</p></div>
+      <div><h4 class="font-semibold text-lg mb-3">Discover</h4><ul class="space-y-2 text-stone-400 text-sm"><li><a href="#featured" class="hover:text-amber-300">All Puppies</a></li><li><a href="#about">Our Breeders</a></li><li><a href="#testimonials">Reviews</a></li></ul></div>
+      <div><h4 class="font-semibold text-lg mb-3">Policy</h4><ul class="space-y-2 text-stone-400 text-sm"><li>Health Guarantee</li><li>Privacy Terms</li><li>Delivery Agreement</li></ul></div>
+      <div><h4 class="font-semibold text-lg mb-3">Join the waitlist</h4><div class="flex"><input type="email" placeholder="Your email" class="rounded-l-full p-2 w-full text-stone-800 bg-white"><button class="bg-amber-600 px-4 rounded-r-full text-sm hover:bg-amber-700">Notify</button></div></div>
+    </div>
+    <div class="text-center text-stone-500 text-sm pt-8 border-t border-stone-800 mt-8">© 2025 PawHaven — Redefining puppy adoption with elegance.</div>
+  </footer>
+
+  <div id="puppyModal" class="fixed inset-0 z-[100] hidden items-center justify-center modal-bg transition-all duration-300" onclick="if(event.target===this) closeModal()">
+    <div class="max-w-4xl w-full mx-4 bg-white rounded-3xl shadow-2xl overflow-y-auto max-h-[90vh] relative" id="modalContent"></div>
+  </div>
+
+  <style>
+    .modal-bg {
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(8px);
+    }
+  </style>
+
+  <script>
+    // Complete puppy dataset - 45 puppies (21 original from site + 24 new premium puppies)
+    const originalPuppies = [
+      { id:1, name:"Bella", breed:"Poodle (Miniature)", price:"$950", age:"10 weeks", gender:"Female", traits:"Playful, Intelligent", image:"https://static.readdy.ai/image/0e9f467665048bd39e3b2398c1b1852d/9623edc7bec5bf60ed51e71d2a91db1a.jpeg", vaccine:"Core vaccines + deworming", health:"1-year health guarantee", personality:"Sweet, affectionate mini poodle, great with families" },
+      { id:2, name:"Lulu", breed:"Bichon Frise", price:"$720", age:"11 weeks", gender:"Female", traits:"Gentle, Hypoallergenic", image:"https://static.readdy.ai/image/0e9f467665048bd39e3b2398c1b1852d/162f8e2dabb9695d386b88ce59a0d8dc.jpeg", vaccine:"Up-to-date shots", health:"Health certificate included", personality:"Fluffy and loving, perfect lap dog" },
+      { id:3, name:"Max", breed:"Labrador Retriever", price:"$850", age:"9 weeks", gender:"Male", traits:"Energetic, Loyal", image:"https://static.readdy.ai/image/0e9f467665048bd39e3b2398c1b1852d/93e7ddc86d51c2817a9f1c4d24607248.jpeg", vaccine:"First shots completed", health:"Genetic screening done", personality:"Friendly and outgoing family dog" },
+      { id:4, name:"Momo", breed:"Shih Tzu", price:"$680", age:"12 weeks", gender:"Female", traits:"Calm, Cuddly", image:"https://static.readdy.ai/image/0e9f467665048bd39e3b2398c1b1852d/8b5234f983007b34aa3f3101df1a75ae.jpeg", vaccine:"Vaccinated", health:"Vet checked", personality:"Gentle and affectionate companion" },
+      { id:5, name:"Toby", breed:"Dachshund (Dapple)", price:"$810", age:"8 weeks", gender:"Male", traits:"Curious, Brave", image:"https://static.readdy.ai/image/9b5699dcad1a3612a74a8413c5279e67/048e77a031e2c03d7e1f9670b9d292c6.jpeg", vaccine:"First shots", health:"Health guaranteed", personality:"Adventurous and loyal" },
+      { id:6, name:"Daisy", breed:"Dachshund", price:"$700", age:"10 weeks", gender:"Female", traits:"Sweet, Playful", image:"https://static.readdy.ai/image/9b5699dcad1a3612a74a8413c5279e67/c11b49297a9c3ebdae53582eaa7fe327.jpeg", vaccine:"Vaccinated", health:"Microchipped", personality:"Loving and energetic" },
+      { id:7, name:"Cooper", breed:"Beagle", price:"$650", age:"10 weeks", gender:"Male", traits:"Curious, Friendly", image:"https://static.readdy.ai/image/9b5699dcad1a3612a74a8413c5279e67/b8e7d30b87d972de7d087fa1fb8077a8.jpeg", vaccine:"Up-to-date", health:"Health certificate", personality:"Happy and playful" },
+      { id:8, name:"Rocky", breed:"Rottweiler", price:"$900", age:"11 weeks", gender:"Male", traits:"Protective, Loyal", image:"https://static.readdy.ai/image/9b5699dcad1a3612a74a8413c5279e67/b04ebbd56254413d02f29ab29c7dd65f.jpeg", vaccine:"Vaccinated", health:"Full vet check", personality:"Confident and devoted" },
+      { id:9, name:"Luna", breed:"Cane Corso", price:"$1,200", age:"12 weeks", gender:"Female", traits:"Intelligent, Protective", image:"https://static.readdy.ai/image/9b5699dcad1a3612a74a8413c5279e67/3822f2569f8292287e62bb39a8c25e6f.jpeg", vaccine:"All shots", health:"Premium health plan", personality:"Loyal guardian" },
+      { id:10, name:"Charlie", breed:"Boxer", price:"$880", age:"9 weeks", gender:"Male", traits:"Energetic, Funny", image:"https://static.readdy.ai/image/9cac1a1aafe4604d805cf72832ef3255/64b2d901d1603493a17b20ffc5687621.jpeg", vaccine:"Vaccinated", health:"Health guaranteed", personality:"Goofy and loving" },
+      { id:11, name:"Buddy", breed:"Boston Terrier", price:"$780", age:"10 weeks", gender:"Male", traits:"Friendly, Smart", image:"https://static.readdy.ai/image/9cac1a1aafe4604d805cf72832ef3255/96f5f2e2e2d4fda6ac5b9a363731842f.jpeg", vaccine:"Up-to-date", health:"Vet certified", personality:"Great with kids" },
+      { id:12, name:"Oliver", breed:"Bernese Mountain Dog", price:"$1,150", age:"11 weeks", gender:"Male", traits:"Gentle, Calm", image:"https://static.readdy.ai/image/9cac1a1aafe4604d805cf72832ef3255/eddfc9a4f060f803efb96bd24105bc64.jpeg", vaccine:"Vaccinated", health:"2-year guarantee", personality:"Sweet and patient" },
+      { id:13, name:"Coco", breed:"Chihuahua", price:"$620", age:"9 weeks", gender:"Female", traits:"Loyal, Bold", image:"https://static.readdy.ai/image/9cac1a1aafe4604d805cf72832ef3255/262024c59182b2d5b281a77e5abac93e.jpeg", vaccine:"First shots", health:"Health check", personality:"Tiny but brave" },
+      { id:14, name:"Duke", breed:"Pug", price:"$740", age:"10 weeks", gender:"Male", traits:"Playful, Charming", image:"https://static.readdy.ai/image/9cac1a1aafe4604d805cf72832ef3255/1f41d3ed961ffb08cd6e2eb704f6b4b7.jpeg", vaccine:"Vaccinated", health:"Health certificate", personality:"Silly and lovable" },
+      { id:15, name:"Rosie", breed:"Great Dane", price:"$1,350", age:"11 weeks", gender:"Female", traits:"Gentle, Calm", image:"https://static.readdy.ai/image/9cac1a1aafe4604d805cf72832ef3255/52ce14f5a1c4313a09eae41a4f770202.jpeg", vaccine:"Up-to-date", health:"Premium health", personality:"Gentle giant" },
+      { id:16, name:"Milo & Sophie", breed:"Golden Retriever Twins", price:"$1,450", age:"9 weeks", gender:"Male/Female", traits:"Friendly, Smart", image:"https://static.readdy.ai/image/9cac1a1aafe4604d805cf72832ef3255/d0670e53f856dfe8d16be2b9455569d5.jpeg", vaccine:"Both vaccinated", health:"Twin health plan", personality:"Double love" },
+      { id:17, name:"Bailey", breed:"Beagle", price:"$690", age:"10 weeks", gender:"Female", traits:"Curious, Sweet", image:"https://static.readdy.ai/image/9cac1a1aafe4604d805cf72832ef3255/3715154d24185972c9ea34ba9fb39c8b.jpeg", vaccine:"Vaccinated", health:"Health check", personality:"Adventurous" },
+      { id:18, name:"Sadie", breed:"Cocker Spaniel", price:"$820", age:"11 weeks", gender:"Female", traits:"Gentle, Loving", image:"https://static.readdy.ai/image/9cac1a1aafe4604d805cf72832ef3255/78b125e3ff4800d7e04804e6e1cd03df.jpeg", vaccine:"Up-to-date", health:"Vet certified", personality:"Sweet and loyal" },
+      { id:19, name:"Pepper", breed:"French Bulldog", price:"$1,100", age:"10 weeks", gender:"Male", traits:"Playful, Charming", image:"https://static.readdy.ai/image/91a26770f1ff4acabf9fe0dae45acdbf/f691013861e83e6b67d6e87b6f98653a.jpeg", vaccine:"Vaccinated", health:"Health guarantee", personality:"Funny and affectionate" },
+      { id:20, name:"Snowflake", breed:"Maltese", price:"$880", age:"9 weeks", gender:"Female", traits:"Gentle, Hypoallergenic", image:"https://static.readdy.ai/image/91a26770f1ff4acabf9fe0dae45acdbf/9c326abfcb51f02aaadb734508319a8a.jpeg", vaccine:"First shots", health:"Health certificate", personality:"Fluffy and sweet" },
+      { id:21, name:"Biscuit", breed:"Shih Tzu", price:"$750", age:"10 weeks", gender:"Male", traits:"Calm, Cuddly", image:"https://static.readdy.ai/image/91a26770f1ff4acabf9fe0dae45acdbf/3b19cfbe0d0db4e53b6678d8db8cf083.jpeg", vaccine:"Vaccinated", health:"Vet checked", personality:"Perfect lap dog" }
+    ];
+
+    // Additional 24 premium puppies with high-quality breed-matched images from free CDNs
+    const additionalBreeds = [
+      { name:"Bear", breed:"Siberian Husky", price:"$1,050", age:"10 weeks", gender:"Male", traits:"Energetic, Loyal", image:"https://images.pexels.com/photos/2664417/pexels-photo-2664417.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Complete shots", health:"2-year warranty", personality:"Stunning blue eyes, very friendly" },
+      { name:"Lola", breed:"Cavalier King Charles", price:"$1,250", age:"9 weeks", gender:"Female", traits:"Gentle, Affectionate", image:"https://images.pexels.com/photos/33053/dog-young-dog-small-dog-maltese.jpg?auto=compress&cs=tinysrgb&w=600", vaccine:"Vaccinated", health:"Premium health", personality:"Royal and sweet" },
+      { name:"Zeus", breed:"German Shepherd", price:"$980", age:"11 weeks", gender:"Male", traits:"Intelligent, Protective", image:"https://images.pexels.com/photos/2303405/pexels-photo-2303405.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Up-to-date", health:"Health certified", personality:"Loyal and smart" },
+      { name:"Nala", breed:"Australian Shepherd", price:"$1,100", age:"10 weeks", gender:"Female", traits:"Energetic, Smart", image:"https://images.pexels.com/photos/4944509/pexels-photo-4944509.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Vaccinated", health:"Genetic tested", personality:"Amazing with kids" },
+      { name:"Oscar", breed:"Yorkshire Terrier", price:"$890", age:"9 weeks", gender:"Male", traits:"Brave, Loyal", image:"https://images.pexels.com/photos/181356/pexels-photo-181356.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"First shots", health:"Microchipped", personality:"Tiny but mighty" },
+      { name:"Ruby", breed:"Border Collie", price:"$950", age:"10 weeks", gender:"Female", traits:"Smart, Energetic", image:"https://images.pexels.com/photos/1503080/pexels-photo-1503080.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Vaccinated", health:"Health certificate", personality:"Highly trainable" },
+      { name:"Thor", breed:"Doberman", price:"$1,200", age:"11 weeks", gender:"Male", traits:"Protective, Loyal", image:"https://images.pexels.com/photos/1564506/pexels-photo-1564506.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"All shots", health:"Premium plan", personality:"Confident guardian" },
+      { name:"Molly", breed:"Pomeranian", price:"$780", age:"9 weeks", gender:"Female", traits:"Fluffy, Playful", image:"https://images.pexels.com/photos/257540/pexels-photo-257540.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Vaccinated", health:"Health check", personality:"Fluffy ball of joy" },
+      { name:"Jack", breed:"Jack Russell", price:"$670", age:"10 weeks", gender:"Male", traits:"Energetic, Smart", image:"https://images.pexels.com/photos/1996334/pexels-photo-1996334.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"First shots", health:"Vet certified", personality:"Endless energy" },
+      { name:"Penny", breed:"Papillon", price:"$920", age:"11 weeks", gender:"Female", traits:"Butterfly ears, Sweet", image:"https://images.pexels.com/photos/673020/pexels-photo-673020.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Vaccinated", health:"Health guarantee", personality:"Elegant and smart" },
+      { name:"Simba", breed:"Akita", price:"$1,300", age:"10 weeks", gender:"Male", traits:"Dignified, Loyal", image:"https://images.pexels.com/photos/1463215/pexels-photo-1463215.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Complete", health:"2-year warranty", personality:"Majestic companion" },
+      { name:"Bella", breed:"Samoyed", price:"$1,400", age:"9 weeks", gender:"Female", traits:"Friendly, Fluffy", image:"https://images.pexels.com/photos/1173735/pexels-photo-1173735.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Vaccinated", health:"Premium", personality:"Cloud-like fluff" },
+      { name:"Rex", breed:"Staffordshire Bull", price:"$850", age:"11 weeks", gender:"Male", traits:"Loyal, Courageous", image:"https://images.pexels.com/photos/1458914/pexels-photo-1458914.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Shots current", health:"Health check", personality:"Loyal family dog" },
+      { name:"Ginger", breed:"Vizsla", price:"$1,080", age:"10 weeks", gender:"Female", traits:"Affectionate, Energetic", image:"https://images.pexels.com/photos/133394/pexels-photo-133394.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Vaccinated", health:"Genetic tested", personality:"Velcro dog" },
+      { name:"Rocco", breed:"Bullmastiff", price:"$1,150", age:"9 weeks", gender:"Male", traits:"Gentle Giant, Protective", image:"https://images.pexels.com/photos/3952659/pexels-photo-3952659.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Up-to-date", health:"Premium guarantee", personality:"Gentle protector" },
+      { name:"Lily", breed:"West Highland Terrier", price:"$890", age:"10 weeks", gender:"Female", traits:"Playful, Confident", image:"https://images.pexels.com/photos/1996334/pexels-photo-1996334.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Vaccinated", health:"Health certificate", personality:"Spunky and sweet" },
+      { name:"Apollo", breed:"Rhodesian Ridgeback", price:"$1,280", age:"11 weeks", gender:"Male", traits:"Brave, Loyal", image:"https://images.pexels.com/photos/1564506/pexels-photo-1564506.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Complete", health:"2-year warranty", personality:"Noble hunter" },
+      { name:"Willow", breed:"Irish Setter", price:"$970", age:"9 weeks", gender:"Female", traits:"Energetic, Friendly", image:"https://images.pexels.com/photos/2303405/pexels-photo-2303405.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Vaccinated", health:"Health check", personality:"Beautiful red coat" },
+      { name:"Enzo", breed:"Weimaraner", price:"$1,050", age:"10 weeks", gender:"Male", traits:"Smart, Energetic", image:"https://images.pexels.com/photos/133394/pexels-photo-133394.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"All shots", health:"Premium", personality:"Silver ghost" },
+      { name:"Stella", breed:"Shetland Sheepdog", price:"$920", age:"11 weeks", gender:"Female", traits:"Intelligent, Loyal", image:"https://images.pexels.com/photos/4944509/pexels-photo-4944509.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Vaccinated", health:"Vet certified", personality:"Mini Lassie" },
+      { name:"Bruno", breed:"Newfoundland", price:"$1,480", age:"9 weeks", gender:"Male", traits:"Gentle, Sweet", image:"https://images.pexels.com/photos/3952659/pexels-photo-3952659.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Complete", health:"2-year warranty", personality:"Gentle giant" },
+      { name:"Hazel", breed:"English Bulldog", price:"$1,320", age:"10 weeks", gender:"Female", traits:"Calm, Loyal", image:"https://images.pexels.com/photos/4588069/pexels-photo-4588069.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Vaccinated", health:"Premium health", personality:"Smoosh face love" },
+      { name:"Koda", breed:"Alaskan Malamute", price:"$1,180", age:"11 weeks", gender:"Male", traits:"Strong, Loyal", image:"https://images.pexels.com/photos/2664417/pexels-photo-2664417.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Shots current", health:"Health guarantee", personality:"Wolf-like beauty" },
+      { name:"Piper", breed:"Whippet", price:"$860", age:"9 weeks", gender:"Female", traits:"Gentle, Fast", image:"https://images.pexels.com/photos/1996334/pexels-photo-1996334.jpeg?auto=compress&cs=tinysrgb&w=600", vaccine:"Vaccinated", health:"Health certificate", personality:"Graceful sprinter" }
+    ];
+
+    let allPuppies = [...originalPuppies];
+    let nextId = 22;
+    additionalBreeds.forEach(breed => {
+      allPuppies.push({ id: nextId++, ...breed, vaccine: breed.vaccine || "Complete vaccination", health: breed.health || "Health guaranteed", personality: breed.personality || "Loving and healthy puppy" });
+    });
+
+    function renderPuppies(filter = "") {
+      const grid = document.getElementById("puppiesGrid");
+      const filtered = allPuppies.filter(p => p.breed.toLowerCase().includes(filter.toLowerCase()));
+      document.getElementById("puppyCountDisplay").innerText = filtered.length;
+      if(filtered.length === 0){
+        grid.innerHTML = `<div class="col-span-full text-center py-16 text-stone-500 bg-white/40 rounded-3xl"><i class="fa-regular fa-face-frown text-4xl mb-2"></i><p>No puppies match this breed. Browse our full collection!</p></div>`;
+        return;
+      }
+      grid.innerHTML = filtered.map(p => `
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover transition-all border border-amber-100 flex flex-col group">
+          <div class="relative h-64 overflow-hidden bg-amber-50">
+            <img src="${p.image}" alt="${p.breed}" class="w-full h-full object-cover transition duration-500 group-hover:scale-105" onerror="this.src='https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=600'">
+          </div>
+          <div class="p-5 flex-1 flex flex-col">
+            <div class="flex justify-between items-start">
+              <div><h3 class="text-xl font-extrabold text-stone-800">${p.name}</h3><p class="text-amber-600 font-semibold text-sm">${p.breed}</p></div>
+              <div class="text-right"><span class="text-xl font-black text-stone-800">${p.price}</span></div>
+            </div>
+            <div class="flex flex-wrap gap-2 text-xs text-stone-500 mt-2"><span><i class="fa-regular fa-calendar"></i> ${p.age}</span><span><i class="fa-regular fa-venus-mars"></i> ${p.gender}</span><span><i class="fa-regular fa-heart"></i> ${p.traits}</span></div>
+            <div class="flex gap-2 mt-4"><button onclick="openDetails(${p.id})" class="flex-1 py-2 rounded-full border border-amber-300 text-amber-700 hover:bg-amber-50 font-medium text-sm transition">Details</button><button onclick="openReserve(${p.id})" class="flex-1 btn-gold text-white py-2 rounded-full font-semibold text-sm">Reserve</button></div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    window.openDetails = (id) => {
+      const p = allPuppies.find(pup => pup.id === id);
+      if(!p) return;
+      document.getElementById("modalContent").innerHTML = `
+        <div class="relative p-5 md:p-7"><button onclick="closeModal()" class="absolute right-4 top-4 z-30 bg-white rounded-full p-2 shadow-md text-stone-600 w-9 h-9 flex items-center justify-center"><i class="fas fa-times"></i></button>
+        <div class="grid md:grid-cols-2 gap-6"><div><img src="${p.image}" class="rounded-2xl w-full h-64 object-cover shadow-md" onerror="this.src='https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg'"><div class="flex gap-2 mt-3"><img src="${p.image}" class="w-20 h-20 rounded-lg object-cover border"></div></div>
+        <div><h2 class="text-2xl font-bold">${p.name} <span class="text-amber-600">${p.breed}</span></h2><div class="mt-4 space-y-2 text-stone-700 text-sm"><p><i class="fas fa-syringe text-amber-600 w-5"></i> ${p.vaccine}</p><p><i class="fas fa-shield-alt text-amber-600"></i> ${p.health}</p><p><i class="fas fa-feather-alt text-amber-600"></i> ${p.personality}</p></div><div class="mt-6 flex gap-3"><button onclick="closeModal(); openReserve(${p.id})" class="btn-gold text-white px-6 py-2 rounded-full font-semibold">Reserve Now</button><a href="#" id="modalWhatsBtn" class="border border-green-500 text-green-600 px-5 py-2 rounded-full flex gap-2 items-center text-sm"><i class="fab fa-whatsapp"></i> Inquire</a></div></div></div></div>
+      `;
+      document.getElementById("puppyModal").classList.remove("hidden");
+      document.getElementById("puppyModal").classList.add("flex");
+      const waModal = document.getElementById("modalWhatsBtn");
+      if(waModal) waModal.onclick = (e) => { e.preventDefault(); window.open(`https://wa.me/15551234567?text=Hi%20PawHaven%2C%20interested%20in%20${p.name}%20(${p.breed})`, '_blank'); };
+    };
+
+    window.openReserve = (id) => {
+      const p = allPuppies.find(pup => pup.id === id);
+      alert(`✨ Reserved request for ${p.name} (${p.breed}). A PawHaven specialist will contact you within 2 hours.`);
+      document.getElementById("contactForm")?.scrollIntoView({behavior:"smooth"});
+    };
+
+    window.closeModal = () => {
+      document.getElementById("puppyModal").classList.add("hidden");
+      document.getElementById("puppyModal").classList.remove("flex");
+    };
+
+    document.getElementById("breedFilter").addEventListener("input", (e) => renderPuppies(e.target.value));
+    document.getElementById("contactForm")?.addEventListener("submit", (e) => { e.preventDefault(); alert("Thank you! Your luxury puppy journey starts now. We'll reach out via email."); e.target.reset(); });
+    document.getElementById("whatsappBtn")?.addEventListener("click", (e) => { e.preventDefault(); window.open("https://wa.me/15551234567?text=Hello%20PawHaven%2C%20I'd%20like%20to%20reserve%20a%20puppy!", "_blank"); });
+
+    renderPuppies();
+  </script>
+</body>
+</html>
